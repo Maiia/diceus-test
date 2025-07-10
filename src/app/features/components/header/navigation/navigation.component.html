@@ -1,0 +1,50 @@
+<nav class="relative container theme-container mx-auto pr-30 mt-5">
+    <ul
+        #scrollContainer
+        cdkScrollable
+        class="flex space-x-6 overflow-x-auto whitespace-nowrap scrollbar-hidden scroll-smooth pr-10"
+    >
+        @for (navItem of navigationRoutes; track navItem.label) {
+            <li class="mr-3.5">
+                <a
+                    class="group px-4 flex items-center h-12 rounded-4xl bg-[var(--theme-bg-1)] border border-[var(--theme-bg-2)] hover:bg-[var(--theme-bg-4)] text-1"
+                    transition-bg
+                    duration-300
+                    ease-in-out
+                    [routerLink]="navItem.path"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    routerLinkActive="bg-[var(--theme-bg-4)] text-white"
+                >
+                    <span
+                        routerLinkActive="text-white"
+                        class="mr-2 w-4.5 h-4.5 text-[var(--theme-accent)] group-hover:text-white"
+                        [innerHTML]="getIcon(navItem.icon!)"
+                    ></span>
+                    <span
+                        routerLinkActive="text-white"
+                        class="text-gray-400 group-hover:text-white"
+                        >{{ navItem.label }}</span
+                    >
+                </a>
+            </li>
+        }
+    </ul>
+    <app-icon-button-circle
+        class="absolute right-14 top-0 z-10"
+        [classes]="
+            'w-12 h-12 flex items-center justify-center rounded-full bg-[var(--theme-bg-1)] border-1 border-[var(--theme-bg-2)] hover:bg-[var(--theme-bg-4)] cursor-pointer transition-bg duration-300'
+        "
+        [icon]="'arrow_back'"
+        [ariaLabel]="'Arrow Left'"
+        (buttonClickEvent)="scrollLeft()"
+    ></app-icon-button-circle>
+    <app-icon-button-circle
+        class="absolute right-0 top-0 z-10"
+        [classes]="
+            'w-12 h-12 flex items-center justify-center rounded-full bg-[var(--theme-bg-1)] border-1 border-[var(--theme-bg-2)] hover:bg-[var(--theme-bg-4)] cursor-pointer transition-bg duration-300'
+        "
+        [icon]="'arrow_forward'"
+        [ariaLabel]="'Arrow Right'"
+        (buttonClickEvent)="scrollRight()"
+    ></app-icon-button-circle>
+</nav>

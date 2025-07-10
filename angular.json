@@ -32,7 +32,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+                "@angular/material/prebuilt-themes/cyan-orange.css",
+                "src/styles.css",
+                "src/global.scss"
             ],
             "scripts": []
           },

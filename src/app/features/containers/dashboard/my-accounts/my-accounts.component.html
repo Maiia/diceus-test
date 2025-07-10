@@ -1,0 +1,16 @@
+<div class="theme-card">
+    <div class="flex justify-start mb-4">
+        <h2 class="text-lg font-semibold mr-6.5">My accounts</h2>
+        <app-search-bar [addSortButton]="true" [addNewButton]="true"></app-search-bar>
+    </div>
+
+    <app-table [columns]="columns" [items]="dataSource()" />
+</div>
+
+<ng-template #winnabilityTemplate let-value let-row="row">
+    <app-winnability-badge [level]="value"></app-winnability-badge>
+</ng-template>
+
+<ng-template #colourBadge let-value let-row="row">
+    <app-colour-badge [value]="value"></app-colour-badge>
+</ng-template>

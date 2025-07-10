@@ -1,0 +1,530 @@
+[
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "Underwriter Referral",
+        "status": "Pending Review",
+        "created": "2024-06-06"
+    },
+    {
+        "originator": {
+            "name": "Alice",
+            "surname": ""
+        },
+        "originatorAvatar": "",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "Amendment",
+        "status": "Pending Review",
+        "created": "2024-05-31"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "GreenField Energy Ltd",
+        "line": "Environmental",
+        "type": "Email",
+        "status": "New",
+        "created": "2024-06-15"
+    },
+    {
+        "originator": {
+            "name": "Kateryna",
+            "surname": "Dribnytsia"
+        },
+        "originatorAvatar": "/mock-logos/work_ava.png",
+        "client": "NorthStar Financial Group",
+        "line": "D&O Liability",
+        "type": "Amendment",
+        "status": "Pending Review",
+        "created": "2024-05-28"
+    },
+    {
+        "originator": {
+            "name": "Bob",
+            "surname": "Johnson"
+        },
+        "originatorAvatar": "",
+        "client": "Alliance Healthcare Systems",
+        "line": "Medical Malpractice",
+        "type": "Underwriter Referral",
+        "status": "Completed",
+        "created": "2024-06-05"
+    },
+    {
+        "originator": {
+            "name": "Bob",
+            "surname": "Johnson"
+        },
+        "originatorAvatar": "",
+        "client": "QuantumTech Industries",
+        "line": "Product Liability",
+        "type": "Email",
+        "status": "Pending Review",
+        "created": "2024-06-01"
+    },
+    {
+        "originator": {
+            "name": "Kateryna",
+            "surname": "Dribnytsia"
+        },
+        "originatorAvatar": "/mock-logos/work_ava.png",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "New Submission",
+        "status": "Completed",
+        "created": "2024-06-15"
+    },
+    {
+        "originator": {
+            "name": "Alice",
+            "surname": ""
+        },
+        "originatorAvatar": "",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "New Submission",
+        "status": "New",
+        "created": "2024-06-17"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "Underwriter Referral",
+        "status": "Completed",
+        "created": "2024-05-27"
+    },
+    {
+        "originator": {
+            "name": "Jane",
+            "surname": "Doe"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "Email",
+        "status": "New",
+        "created": "2024-06-15"
+    },
+    {
+        "originator": {
+            "name": "Kateryna",
+            "surname": "Dribnytsia"
+        },
+        "originatorAvatar": "/mock-logos/work_ava.png",
+        "client": "GreenField Energy Ltd",
+        "line": "Environmental",
+        "type": "Email",
+        "status": "New",
+        "created": "2024-06-19"
+    },
+    {
+        "originator": {
+            "name": "Jane",
+            "surname": "Doe"
+        },
+        "originatorAvatar": "",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "Underwriter Referral",
+        "status": "New",
+        "created": "2024-05-21"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "GreenField Energy Ltd",
+        "line": "Environmental",
+        "type": "New Submission",
+        "status": "Pending Review",
+        "created": "2024-06-10"
+    },
+    {
+        "originator": {
+            "name": "Jane",
+            "surname": "Doe"
+        },
+        "originatorAvatar": "",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "New Submission",
+        "status": "New",
+        "created": "2024-05-25"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "Amendment",
+        "status": "New",
+        "created": "2024-05-22"
+    },
+    {
+        "originator": {
+            "name": "Jane",
+            "surname": "Doe"
+        },
+        "originatorAvatar": "",
+        "client": "NorthStar Financial Group",
+        "line": "D&O Liability",
+        "type": "Underwriter Referral",
+        "status": "Pending Review",
+        "created": "2024-06-16"
+    },
+    {
+        "originator": {
+            "name": "John",
+            "surname": "Smith"
+        },
+        "originatorAvatar": "",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "New Submission",
+        "status": "Completed",
+        "created": "2024-05-29"
+    },
+    {
+        "originator": {
+            "name": "Alice",
+            "surname": ""
+        },
+        "originatorAvatar": "",
+        "client": "NorthStar Financial Group",
+        "line": "D&O Liability",
+        "type": "Email",
+        "status": "New",
+        "created": "2024-06-17"
+    },
+    {
+        "originator": {
+            "name": "Jane",
+            "surname": "Doe"
+        },
+        "originatorAvatar": "",
+        "client": "Alliance Healthcare Systems",
+        "line": "Medical Malpractice",
+        "type": "New Submission",
+        "status": "New",
+        "created": "2024-05-27"
+    },
+    {
+        "originator": {
+            "name": "John",
+            "surname": "Smith"
+        },
+        "originatorAvatar": "",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "Underwriter Referral",
+        "status": "New",
+        "created": "2024-06-10"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "Alliance Healthcare Systems",
+        "line": "Medical Malpractice",
+        "type": "Email",
+        "status": "Pending Review",
+        "created": "2024-05-23"
+    },
+    {
+        "originator": {
+            "name": "John",
+            "surname": "Smith"
+        },
+        "originatorAvatar": "",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "New Submission",
+        "status": "New",
+        "created": "2024-05-28"
+    },
+    {
+        "originator": {
+            "name": "Jane",
+            "surname": "Doe"
+        },
+        "originatorAvatar": "",
+        "client": "GreenField Energy Ltd",
+        "line": "Environmental",
+        "type": "Email",
+        "status": "Completed",
+        "created": "2024-06-13"
+    },
+    {
+        "originator": {
+            "name": "Bob",
+            "surname": "Johnson"
+        },
+        "originatorAvatar": "",
+        "client": "GreenField Energy Ltd",
+        "line": "Environmental",
+        "type": "Email",
+        "status": "Pending Review",
+        "created": "2024-06-14"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "GreenField Energy Ltd",
+        "line": "Environmental",
+        "type": "Underwriter Referral",
+        "status": "Completed",
+        "created": "2024-06-08"
+    },
+    {
+        "originator": {
+            "name": "Alice",
+            "surname": ""
+        },
+        "originatorAvatar": "",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "New Submission",
+        "status": "Completed",
+        "created": "2024-05-31"
+    },
+    {
+        "originator": {
+            "name": "Bob",
+            "surname": "Johnson"
+        },
+        "originatorAvatar": "",
+        "client": "NorthStar Financial Group",
+        "line": "D&O Liability",
+        "type": "New Submission",
+        "status": "Completed",
+        "created": "2024-06-11"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "Amendment",
+        "status": "Pending Review",
+        "created": "2024-06-16"
+    },
+    {
+        "originator": {
+            "name": "Alice",
+            "surname": ""
+        },
+        "originatorAvatar": "",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "Underwriter Referral",
+        "status": "Completed",
+        "created": "2024-06-10"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "Alliance Healthcare Systems",
+        "line": "Medical Malpractice",
+        "type": "Amendment",
+        "status": "New",
+        "created": "2024-06-13"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "Amendment",
+        "status": "Pending Review",
+        "created": "2024-06-02"
+    },
+    {
+        "originator": {
+            "name": "Jane",
+            "surname": "Doe"
+        },
+        "originatorAvatar": "",
+        "client": "GreenField Energy Ltd",
+        "line": "Environmental",
+        "type": "Amendment",
+        "status": "New",
+        "created": "2024-06-04"
+    },
+    {
+        "originator": {
+            "name": "Jane",
+            "surname": "Doe"
+        },
+        "originatorAvatar": "",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "Amendment",
+        "status": "New",
+        "created": "2024-06-07"
+    },
+    {
+        "originator": {
+            "name": "Alice",
+            "surname": ""
+        },
+        "originatorAvatar": "",
+        "client": "GreenField Energy Ltd",
+        "line": "Environmental",
+        "type": "Email",
+        "status": "New",
+        "created": "2024-06-09"
+    },
+    {
+        "originator": {
+            "name": "Alice",
+            "surname": ""
+        },
+        "originatorAvatar": "",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "Email",
+        "status": "Completed",
+        "created": "2024-06-18"
+    },
+    {
+        "originator": {
+            "name": "Alice",
+            "surname": ""
+        },
+        "originatorAvatar": "",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "New Submission",
+        "status": "Completed",
+        "created": "2024-06-12"
+    },
+    {
+        "originator": {
+            "name": "Bob",
+            "surname": "Johnson"
+        },
+        "originatorAvatar": "",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "Amendment",
+        "status": "Pending Review",
+        "created": "2024-06-18"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "Amendment",
+        "status": "New",
+        "created": "2024-06-14"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "New Submission",
+        "status": "Completed",
+        "created": "2024-06-19"
+    },
+    {
+        "originator": {
+            "name": "John",
+            "surname": "Smith"
+        },
+        "originatorAvatar": "",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "Email",
+        "status": "Completed",
+        "created": "2024-06-16"
+    },
+    {
+        "originator": {
+            "name": "Alice",
+            "surname": ""
+        },
+        "originatorAvatar": "",
+        "client": "Alliance Healthcare Systems",
+        "line": "Medical Malpractice",
+        "type": "Email",
+        "status": "New",
+        "created": "2024-06-06"
+    },
+    {
+        "originator": {
+            "name": "John",
+            "surname": "Smith"
+        },
+        "originatorAvatar": "",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "New Submission",
+        "status": "Completed",
+        "created": "2024-06-15"
+    },
+    {
+        "originator": {
+            "name": "Jane",
+            "surname": "Doe"
+        },
+        "originatorAvatar": "",
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo",
+        "type": "Email",
+        "status": "Pending Review",
+        "created": "2024-05-28"
+    },
+    {
+        "originator": {
+            "name": "Emily",
+            "surname": "White"
+        },
+        "originatorAvatar": "https://blush-design.imgix.net/collections/rChdrB8vX8xQJunpDPp8/v16/Master/Avataaar/cropped/Default.svg?w=500&auto=compress&cs=srgb",
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability",
+        "type": "Email",
+        "status": "Pending Review",
+        "created": "2024-06-18"
+    }
+]

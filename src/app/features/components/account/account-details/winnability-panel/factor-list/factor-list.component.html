@@ -1,0 +1,42 @@
+<div class="flex items-center gap-2 mb-4 text-lg font-semibold">
+    <span
+        [ngClass]="`text-[${primaryColor}] border-[${primaryColor}]`"
+        class="w-6 h-6 rounded-full border-2 flex items-center align-center justify-center"
+    >
+        <mat-icon class="text-lg! leading-6!">{{
+            direction === 'up' ? 'arrow_upward' : 'arrow_downward'
+        }}</mat-icon>
+    </span>
+    {{ title }}
+</div>
+
+@for (item of items(); track item; let i = $index) {
+    <div class="mb-2">
+        <div class="flex items-center gap-2 text-sm mb-1">
+            <span
+                class="rounded-full w-11 h-11 flex items-center justify-center text-md border-1"
+                [ngStyle]="{ color: primaryColor, borderColor: primaryColor }"
+            >
+                {{ i + 1 }}
+            </span>
+            <div class="flex-1 relative">
+                <div class="flex-1">{{ item.label }}</div>
+                <div class="h-5 w-full overflow-hidden">
+                    <div
+                        class="h-full rounded-tr-full rounded-br-full bg-gradient-to-r from-transparent"
+                        [ngClass]="gradientClass"
+                        [ngStyle]="{
+                            width: getWidth(item.value) + '%',
+                        }"
+                    ></div>
+                </div>
+                <div
+                    class="absolute bottom-0 pl-3.5 text-[var(--theme-text-color-4)]"
+                    [ngStyle]="{ left: getWidth(item.value) + '%' }"
+                >
+                    {{ item.value > 0 ? '+' : '' }}{{ item.value }}%
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@theme {
+    --theme-accent: #3B82F6;
+
+    --theme-text-base-color: #E5E7EB;
+    --theme-text-color-1: #596275;
+    --theme-text-color-2: #C5CAD3; /* text-gray-400 */
+    --theme-text-color-3: #6A3BF6;
+    --theme-text-color-4: #8A8B98;
+
+    --theme-card-bg: #1E2233;
+    --theme-bg-1: #0C0F17;
+    --theme-bg-2: #313B54;
+    --theme-bg-3: #293245;
+    --theme-bg-4: #1E40AF;
+    --theme-bg-5: #121622;
+    --theme-bg-6: #252A3D;
+
+    /* акцентні кольори */
+    --theme-accent-green: #3BB979;
+    --theme-accent-red: #B93B3B;
+    --theme-accent-red-1: #CC0101;
+    --theme-accent-yellow: #FDD261;
+
+    --theme-gradient-accent: linear-gradient(
+        to top right,
+        rgba(59, 130, 246, 0.3),
+        rgba(59, 130, 246, 1)
+    );
+
+
+    --text-1: 1.063rem;
+}
+
+@utility scrollbar-hidden {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+@layer base {
+    h1 {
+        font-size: var(--text-3xl);
+        @apply text-white tracking-tighter;
+    }
+    h2 {
+        font-size: 1.563rem;
+        font-weight: 400;
+        @apply text-white tracking-tighter;
+    }
+    h3 {
+        @apply text-2xl font-thin tracking-tighter;
+    }
+    h4 {
+        font-size: 1.3rem;
+        @media (max-width: 80rem) {
+            &.custom-sm {
+                font-size: 1rem;
+            }
+        }
+    }
+    a {
+        color: var(--theme-accent);
+    }
+    a.active {
+        @apply bg-[var(--theme-bg-4)] text-white;
+    }
+
+    .theme-container,
+    .container.theme-container {
+        @media (width >= 103.5rem /* 1536px */) {
+            max-width: 103.5rem !important; /* 1536px */;
+        }
+    }
+
+    .theme-card {
+        background-color: var(--theme-card-bg);
+        @apply rounded-3xl border-1 border-solid border-[var(--theme-bg-2)] p-4;
+    }
+
+    .theme-card-inner {
+        @apply bg-[var(--theme-bg-6)] rounded-3xl w-1/4 py-5 px-8 flex flex-col gap-2;
+    }
+
+    /*
+    ** Buttons
+    */
+
+    .theme-button {
+        @apply bg-[var(--theme-bg-1)] text-[var(--theme-text-color-2)] rounded-full px-4 py-2;
+        &:hover {
+            @apply bg-[var(--theme-accent)] text-white;
+        }
+    }
+    .outlined-button {
+        @apply border-1 border-solid border-[var(--theme-accent)] text-[var(--theme-accent)] rounded-full px-4 py-2;
+        &:hover {
+            @apply bg-[var(--theme-accent)] text-white;
+        }
+    }
+    .action-button-small {
+        @apply min-h-10 min-w-30 bg-[var(--theme-accent)] text-white text-base rounded-full px-4 hover:bg-[var(--theme-bg-4)] transition-colors duration-300;
+    }
+    .action-button-big {
+        @apply min-w-36 min-h-14 bg-[var(--theme-accent-green)] text-[var(--theme-bg-5)] px-4  rounded-full cursor-pointer hover:bg-[var(--theme-bg-4)] transition-colors duration-300;
+        @media (max-width: 80rem) {
+            @apply min-w-30 min-h-10;
+        }
+    }
+    .button-active {
+        @apply bg-[var(--theme-accent)] text-white  rounded-full hover:bg-[var(--theme-bg-4)] transition-colors duration-300;
+    }
+
+
+    /*
+    ** typography
+    */
+    .text-1 {
+        font-size: var(--text-1);
+        font-weight: 600;
+    }
+    .text-2 {
+        @apply text-2xl text-[var(--theme-text-color-4)] font-thin;
+    }
+    .text-big {
+        font-size: 3.375rem;
+        font-weight: 100;
+    }
+
+
+    /*
+    ** gradients
+    */
+    .gradient-green {
+        @apply bg-gradient-to-r from-transparent to-[var(--theme-accent-green)];
+    }
+
+    .gradient-yellow {
+        @apply bg-gradient-to-r from-transparent to-[var(--theme-accent-yellow)];
+    }
+
+
+    /*
+    ** borders
+    */
+    .border-left-dashed {
+        @apply border-l-1 border-dashed border-[var(--theme-text-color-4)] pl-4;
+    }
+    .lg-border-left-dashed {
+        @media (min-width: 80rem) {
+            @apply border-l-1 border-dashed border-[var(--theme-text-color-4)] pl-4
+        }
+    }
+}
+
+body {
+    background-color: var(--theme-bg-1);
+    color: var(--theme-text-base-color);
+    font-family: 'Amiko', sans-serif;
+    font-size: 1rem;
+    @apply tracking-tight;
+}
+

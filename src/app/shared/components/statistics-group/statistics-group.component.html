@@ -1,0 +1,7 @@
+<h3 class="mb-3">{{ title }}</h3>
+@for (item of items(); track item) {
+    <div class="mb-2 flex items-center gap-2">
+        <app-progress-bar class="w-[52.2%] h-5 shrink-0" [value]="item.value"></app-progress-bar>
+        <div class="w-[47.8%] text-sm text-gray-300">{{ item.label }}: {{ item.value }}%</div>
+    </div>
+}

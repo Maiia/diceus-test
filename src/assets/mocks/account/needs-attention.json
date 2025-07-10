@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Marine",
+        "type": "survey",
+        "date": "2025-06-12",
+        "entityId": "abc123"
+    },
+    {
+        "type": "loss-control",
+        "date": "2025-06-12",
+        "entityId": "abc123"
+    },
+    {
+        "type": "claims-review",
+        "openClaims": 3,
+        "amount": 245000,
+        "entityId": "abc123"
+    }
+]

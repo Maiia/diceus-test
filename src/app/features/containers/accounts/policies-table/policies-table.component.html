@@ -1,0 +1,22 @@
+<h2 class="mt-11 mb-8">Policies</h2>
+
+<section class="theme-card w-full overflow-x-auto">
+    <app-search-bar></app-search-bar>
+    <app-table class="block mt-3.5" [columns]="columns" [items]="policies() || []" />
+
+    <ng-template #lineTemplate let-value let-row="row">
+        <div class="flex">
+            <div
+                [style.backgroundColor]="getIconClass(row.icon)"
+                class="w-6 h-6 p-1 mr-1 text-white rounded-full"
+                [innerHTML]="getIcon(row.icon)"
+            ></div>
+            <span>{{ row.name }}</span>
+        </div>
+        <span class="text-[var(--theme-text-color-4)]">{{ row.id }}</span>
+    </ng-template>
+
+    <ng-template #colourBadge let-value let-row="row">
+        <app-colour-badge [value]="value"></app-colour-badge>
+    </ng-template>
+</section>

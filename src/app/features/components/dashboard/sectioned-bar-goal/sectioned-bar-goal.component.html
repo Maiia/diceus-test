@@ -1,0 +1,37 @@
+<div class="goal-container">
+    <h3 class="goal-title">{{ goal.title }}</h3>
+
+    <div class="relative mt-6">
+        <div class="target-indicator" [ngStyle]="{ left: getTargetPosition() }">
+            <span class="target-text">{{ getTargetText() }}</span>
+            @if (!this.isRangeTarget()) {
+                <mat-icon>arrow_drop_down</mat-icon>
+            }
+        </div>
+
+        <div
+            class="current-indicator"
+            [style.color]="getIndicator().color"
+            [ngStyle]="{ left: getCurrentPosition() }"
+        >
+            <mat-icon>arrow_drop_up</mat-icon>
+            <span class="indicator-label">{{ getIndicator().label }}</span>
+        </div>
+
+        <div class="current-value" [ngStyle]="{ left: getCurrentPosition() }">
+            <span class="value-label">{{ goal.current }}%</span>
+        </div>
+
+        <div class="bar">
+            @for (section of goal.sections; track section) {
+                <div
+                    class="bar-section"
+                    [ngStyle]="{
+                        width: getBarWidth(section),
+                        backgroundColor: labelColors[section.label],
+                    }"
+                ></div>
+            }
+        </div>
+    </div>
+</div>

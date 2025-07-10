@@ -1,0 +1,59 @@
+<h2 class="text-big">Winnability</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 w-full">
+    <div class="col-span-1">
+        <div class="theme-card-inner w-full px-4 py-5 flex flex-col h-full">
+            <h4>Overall Score</h4>
+            <div class="flex flex-wrap xl:text-nowrap items-center gap-2">
+                <div class="text-big mr-1">{{ winnabilityData()?.score }}%</div>
+                <app-winnability-badge
+                    class="h-10"
+                    [level]="winnabilityData()!.level"
+                ></app-winnability-badge>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-span-1">
+        <div class="theme-card-inner w-full flex flex-col justify-between pb-0 h-full">
+            <h4>Historical trend</h4>
+            <app-line-chart
+                [data]="winnabilityData()?.historicalTrend || []"
+                [labels]="['Jan', 'Feb', 'Mar', 'Apr', 'Now']"
+            ></app-line-chart>
+        </div>
+    </div>
+
+    <div class="md:col-span-2 2xl:col-span-1">
+        <div class="theme-card-inner w-full flex flex-col justify-between pb-0 h-full">
+            <app-statistics-group
+                [title]="'Position'"
+                [items]="winnabilityData()?.position || []"
+            ></app-statistics-group>
+        </div>
+    </div>
+</div>
+
+<div class="flex gap-4 w-full flex-wrap md:flex-nowrap mt-3">
+    <app-factor-list
+        class="flex w-full md:flex-1 theme-card-inner mt-3"
+        [title]="'Increasing Winnability'"
+        [direction]="'up'"
+        [primaryColor]="'var(--theme-accent-green)'"
+        [gradientClass]="'gradient-green'"
+        [items]="winnabilityData()?.increasing || []"
+    />
+
+    <app-factor-list
+        class="flex w-full md:flex-1 theme-card-inner mt-3"
+        [title]="'Decreasing Winnability'"
+        [direction]="'down'"
+        [primaryColor]="'var(--theme-accent-yellow)'"
+        [gradientClass]="'gradient-yellow'"
+        [items]="winnabilityData()?.decreasing || []"
+    />
+</div>
+
+<app-ai-recommendations
+    [aiRecommendations]="aiRecommendations() || []"
+    class="theme-card-inner w-full mt-6"
+></app-ai-recommendations>

@@ -1,0 +1,25 @@
+<div class="border border-yellow-500 rounded-xl p-4 space-y-3 bg-[var(--theme-bg-2)]">
+    <h2 class="text-yellow-400 flex items-center gap-2">
+        <mat-icon class="rotate-180">{{ 'info' }}</mat-icon>
+        Needs Attention
+    </h2>
+
+    <div class="grid grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-4">
+        @for (event of mappedEvents; track event.linkText) {
+            <div class="space-y-1">
+                <div class="text-white text-base font-medium">
+                    {{ event.title }}
+                </div>
+                <div class="text-sm text-gray-400">
+                    {{ event.subtitle }}
+                </div>
+                <a
+                    class="text-blue-400 text-sm inline-flex items-center gap-1 hover:underline"
+                    [routerLink]="event.linkUrl"
+                >
+                    {{ event.linkText }} →
+                </a>
+            </div>
+        }
+    </div>
+</div>

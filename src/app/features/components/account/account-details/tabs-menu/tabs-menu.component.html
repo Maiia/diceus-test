@@ -1,0 +1,80 @@
+<aside class="hidden lg:block px-4 py-5">
+    @for (group of mainTabGroups; track group.key) {
+        <nav
+            role="tablist"
+            class="w-full pt-3 mt-2 xl:pt-5 xl:px-4"
+            [ngClass]="{ 'theme-card-inner': selectedMainTab === group.key }"
+        >
+            <button
+                role="tab"
+                [attr.aria-selected]="selectedMainTab === group.key"
+                [attr.aria-controls]="group.key + '-panel'"
+                class="text-left w-full"
+                (click)="toggleMainTab(group.key)"
+            >
+                <h4
+                    class="custom-sm uppercase tracking-tighter flex items-center justify-between w-full cursor-pointer hover:text-[var(--theme-text-color-3)]"
+                    [ngClass]="{
+                        'text-white font-semibold': selectedMainTab === group.key,
+                    }"
+                >
+                    <span>{{ group.label }}</span>
+                    <span
+                        class="rounded-md py-1 px-2 bg-[var(--theme-bg-6)]"
+                        [ngClass]="{
+                            'border-1 border-b-white': selectedMainTab === group.key,
+                        }"
+                    >
+                        {{ getCountForTab(group.key) || 0 }}
+                    </span>
+                </h4>
+            </button>
+
+            @if (selectedMainTab === group.key && group.subTabs.length > 0) {
+                <div class="xl:ml-4" role="tabpanel" [id]="group.key + '-panel'">
+                    @for (tab of group.subTabs; track tab.key) {
+                        <div
+                            class="mt-4 text-sm cursor-pointer"
+                            [ngClass]="{
+                                'text-[var(--theme-text-color-3)] font-semibold':
+                                    selectedSubTab === tab.key,
+                                'text-white hover:text-[var(--theme-text-color-3)]':
+                                    selectedSubTab !== tab.key,
+                            }"
+                            (click)="selectSubTab(tab.key)"
+                        >
+                            {{ tab.label }}
+                        </div>
+                    }
+                </div>
+            }
+        </nav>
+    }
+</aside>
+<div class="block lg:hidden mb-4">
+    <select
+        class="w-full px-3 py-2 rounded-md bg-[var(--theme-bg-2)] text-white"
+        [(ngModel)]="selectedMainTab"
+    >
+        @for (group of mainTabGroups; track group.key) {
+            <option [value]="group.key">
+                {{ group.label }} ({{ getCountForTab(group.key) || 0 }})
+            </option>
+        }
+    </select>
+
+    @if (selectedMainTab && getSubTabs(selectedMainTab)!.length > 0) {
+        <div class="mt-2">
+            <select
+                class="w-full px-3 py-2 rounded-md bg-[var(--theme-bg-3)] text-white"
+                [(ngModel)]="selectedSubTab"
+            >
+                @for (tab of getSubTabs(selectedMainTab); track tab.key) {
+                    <option [value]="tab.key">
+                        {{ tab.label }}
+                    </option>
+                }
+            </select>
+        </div>
+    }
+</div>

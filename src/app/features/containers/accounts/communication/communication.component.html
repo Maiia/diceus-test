@@ -1,0 +1,54 @@
+<h2>Communication</h2>
+
+<section class="theme-card mt-8 p-6">
+    <app-search-bar></app-search-bar>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start auto-rows-max mt-10">
+        @for (msg of messages(); track msg) {
+            <div
+                class="rounded-3xl p-6 border transition"
+                [ngClass]="msg.status === 'new' ? 'border-blue-500' : 'border-gray-700'"
+            >
+                <div class="flex items-center gap-2 mb-2">
+                    @if (msg.status === 'new') {
+                        <span
+                            class="text-xs bg-blue-600 text-white px-3.5 leading-7 rounded-full uppercase"
+                            >New</span
+                        >
+                    }
+                    @if (msg.status === 'responded') {
+                        <span
+                            class="text-xs bg-indigo-500 text-white px-2 leading-7 min-w-30 text-center rounded-full uppercase"
+                            >Responded</span
+                        >
+                    }
+
+                    <h4>{{ msg.title }}</h4>
+                </div>
+
+                <div class="text-base text-gray-400 mb-1">{{ msg.sender }} // {{ msg.date }}</div>
+
+                <p
+                    class="text-base text-gray-300 mb-3"
+                    [ngClass]="msg.status === 'new' ? 'line-clamp-4' : 'line-clamp-1'"
+                >
+                    {{ msg.content }}
+                </p>
+
+                <div class="flex items-center justify-between">
+                    @if (msg.attachments > 0) {
+                        <div
+                            class="flex items-center gap-1 rounded-full px-3.5 leading-7 bg-[var(--theme-accent-green)] bg-opacity-40"
+                        >
+                            <mat-icon class="rotate-45 text-lg!">attach_file</mat-icon>
+                            {{ msg.attachments }} attachments
+                        </div>
+                    }
+                    @if (msg.status != 'responded') {
+                        <button class="action-button-small">Reply</button>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</section>

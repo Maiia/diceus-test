@@ -1,0 +1,39 @@
+<section class="theme-card p-6 xl:h-full">
+    <h2 class="mb-4">Portfolio goals</h2>
+
+    @for (goal of goals()?.targetGoals; track goal) {
+        <app-sectioned-bar-goal class="pb-6 block" [goal]="goal" />
+    }
+
+    @for (goal of goals()?.progressGoals; track goal) {
+        <div class="mb-6 last:mb-0">
+            <h4 class="text-xs text-gray-400">{{ goal.title }}</h4>
+            <div class="relative h-5 w-full rounded-full bg-[#2e3245] overflow-hidden">
+                <app-progress-bar
+                    class="w-full h-5"
+                    [value]="(goal.actual / goal.total!) * 100"
+                ></app-progress-bar>
+                <div
+                    class="absolute text-right pr-1 left-0 top-1/2 -translate-y-1/2 text-xs font-semibold text-white"
+                    [ngStyle]="{ width: 'calc(' + (goal.actual / goal.total) * 100 + '% )' }"
+                >
+                    {{ goal.actual | compactCurrency: '$' }}
+                </div>
+
+                <div
+                    class="absolute right-0 top-1/2 -translate-y-1/2 text-xs font-semibold text-white pr-2"
+                >
+                    {{ goal.total | compactCurrency: '$' }}
+                </div>
+            </div>
+            <div class="relative mt-1 h-4">
+                <span
+                    class="absolute text-xs text-gray-400"
+                    [ngStyle]="{ left: 'calc(' + (goal.actual / goal.total) * 100 + '% - 12px)' }"
+                >
+                    {{ (goal.actual / goal.total) * 100 | number: '1.0-0' }}%
+                </span>
+            </div>
+        </div>
+    }
+</section>

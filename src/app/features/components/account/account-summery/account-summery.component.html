@@ -1,0 +1,31 @@
+<div class="flex items-center gap-6 p-4">
+    @if (summary()?.logoUrl) {
+        <img
+            ngSrc="/mock-logos/maritime-logo.png"
+            width="102"
+            height="102"
+            alt="Logo"
+            class="w-20 h-20 object-contain rounded-full"
+        />
+    }
+
+    <div class="flex flex-col w-full justify-center gap-1 flex-nowrap">
+        <h1>
+            {{ summary()?.name }}
+        </h1>
+
+        <div class="flex flex-wrap lg:flex-nowrap gap-1 text-sm">
+            <address class="not-italic text-sm text-white w-full lg:basis-[29.5%]">
+                {{ summary()?.address }}
+            </address>
+            @for (item of infoBlocks(); track infoBlocks) {
+                <div
+                    class="flex flex-col w-full lg:basis-[23.5%] mt-3 lg:mt-0 border-l border-gray-600 pl-4 shrink-0"
+                >
+                    <span class="text-xs text-gray-400 uppercase">{{ item.label }}</span>
+                    <span>{{ item.value }}</span>
+                </div>
+            }
+        </div>
+    </div>
+</div>

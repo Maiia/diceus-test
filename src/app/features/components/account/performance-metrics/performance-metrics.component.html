@@ -1,0 +1,45 @@
+<h2>Performance Metrics</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <app-metric-card class="mt-6" [linkText]="'See all factors'" [linkUrl]="'/winnability/factors'">
+        <div>
+            <div class="flex align-center gap-2">
+                <h3>Winnability</h3>
+                <app-winnability-dots [level]="data()!.winnability.level"></app-winnability-dots>
+            </div>
+            <span class="text-big">{{ data()!.winnability.level | winnabilityLabel }}</span>
+        </div>
+    </app-metric-card>
+
+    <app-metric-card class="mt-6" [linkText]="'View history'" [linkUrl]="'/loss-ratio/history'">
+        <div>
+            <h3>Loss Ratio</h3>
+            <div>
+                <span class="text-big">{{ data()!.lossRatio.current }}% </span>
+                <span class="text-2">vs {{ data()!.lossRatio.target }}% target</span>
+            </div>
+        </div>
+    </app-metric-card>
+
+    <app-metric-card class="mt-6" [linkText]="'View trend'" [linkUrl]="'/premium-growth/trend'">
+        <div>
+            <h3>Premium Growth</h3>
+            <div>
+                <span class="text-big">{{ data()!.premiumGrowth!.yoyIncrease }}% </span>
+                <span class="text-2">YoY increase</span>
+            </div>
+            <div class="text-2">
+                {{ data()!.premiumGrowth.current | compactCurrency }} vs
+                {{ data()!.premiumGrowth!.target | compactCurrency }}
+                Target
+            </div>
+        </div>
+    </app-metric-card>
+
+    <div>
+        <app-statistics-group
+            class="theme-card block mt-6"
+            [title]="'Exposure Distribution'"
+            [items]="data()!.exposureDistribution"
+        ></app-statistics-group>
+    </div>
+</div>

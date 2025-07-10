@@ -1,0 +1,198 @@
+<table mat-table [dataSource]="dataSource" class="theme-table">
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column.key">
+        <!-- Header Cell -->
+        <th mat-header-cell *matHeaderCellDef>
+            {{ column.label || '' }}
+        </th>
+
+        <!-- Cell Logic by Type -->
+        <td mat-cell *matCellDef="let item">
+            <ng-container [ngSwitch]="column.type">
+                <!-- STATUS (color-coded badge) -->
+                <ng-container *ngSwitchCase="'status'">
+                    <div class="flex items-center gap-1.5">
+                        <span
+                            class="inline-block w-2.5 h-2.5 rounded-full"
+                            [ngStyle]="{
+                                'background-color': getStatusColor(column, item[column.key]),
+                            }"
+                        ></span>
+                        <span class="text-sm">
+                            {{ item[column.key] }}
+                        </span>
+                    </div>
+                </ng-container>
+
+                <!-- DATE -->
+                <ng-container *ngSwitchCase="'date'">
+                    {{ formatDate(item[column.key], column.dateFormat) }}
+                </ng-container>
+
+                <!-- TEXT (default text) -->
+                <ng-container *ngSwitchCase="'text'">
+                    <div
+                        [ngClass]="
+                            column.align === 'end'
+                                ? 'text-right'
+                                : column.align === 'center'
+                                  ? 'text-center'
+                                  : 'text-left'
+                        "
+                    >
+                        <span [ngClass]="column.classFn?.(item[column.key], item)">
+                            {{
+                                column.formatFn
+                                    ? column.formatFn(item[column.key], item)
+                                    : item[column.key]
+                            }}
+                        </span>
+                    </div>
+                </ng-container>
+
+                <!-- TITLE-SUBTITLE -->
+                <ng-container *ngSwitchCase="'title-subtitle'">
+                    <ng-container *ngIf="column.formatFn as fn">
+                        <ng-container *ngIf="fn(item[column.key], item) as formatted">
+                            <div class="flex flex-col leading-tight">
+                                <span class="font-medium">{{ formatted.title }}</span>
+                                <span class="text-xs text-gray-400">{{ formatted.subtitle }}</span>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+
+                <!-- MONEY SHORT -->
+                <ng-container *ngSwitchCase="'money-short'">
+                    <div
+                        [ngClass]="
+                            column.align === 'end'
+                                ? 'text-right'
+                                : column.align === 'center'
+                                  ? 'text-center'
+                                  : 'text-left'
+                        "
+                    >
+                        <span [ngClass]="column.classFn?.(item[column.key], item)">
+                            {{ item[column.key] | compactCurrency: '$' }}
+                        </span>
+                    </div>
+                </ng-container>
+
+                <!-- MONEY -->
+                <ng-container *ngSwitchCase="'money'">
+                    <div
+                        [ngClass]="
+                            column.align === 'end'
+                                ? 'text-right'
+                                : column.align === 'center'
+                                  ? 'text-center'
+                                  : 'text-left'
+                        "
+                    >
+                        <span [ngClass]="column.classFn?.(item[column.key], item)">
+                            {{ item[column.key] | currency: '$' : 'symbol' : '1.0-0' }}
+                        </span>
+                    </div>
+                </ng-container>
+
+                <!-- CUSTOM -->
+                <ng-container *ngSwitchCase="'custom'">
+                    <ng-container
+                        *ngTemplateOutlet="
+                            column.customTemplate!;
+                            context: { $implicit: item[column.key], row: item }
+                        "
+                    ></ng-container>
+                </ng-container>
+
+                <!-- ACTIONS -->
+                <ng-container *ngSwitchCase="'actions'">
+                    <button
+                        mat-icon-button
+                        [matMenuTriggerFor]="menu"
+                        [matMenuTriggerData]="{ item: item }"
+                    >
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                </ng-container>
+
+                <!-- DEFAULT -->
+                <ng-container *ngSwitchDefault>
+                    {{ item[column.key] }}
+                </ng-container>
+            </ng-container>
+        </td>
+
+        <td mat-footer-cell *matFooterCellDef="let item">
+            @if (column.footerCustomTemplate && column.footerFn) {
+                <ng-container
+                    *ngTemplateOutlet="
+                        column.footerCustomTemplate;
+                        context: { $implicit: column.footerFn(dataSource.data), row: item }
+                    "
+                ></ng-container>
+            } @else if (column.footerFn) {
+                <span>{{ column.footerFn(dataSource.data) }}</span>
+            } @else if (column.showFooter) {
+                <ng-container [ngSwitch]="column.type">
+                    <ng-container *ngSwitchCase="'money'">
+                        <div
+                            [ngClass]="
+                                column.align === 'end'
+                                    ? 'text-right'
+                                    : column.align === 'center'
+                                      ? 'text-center'
+                                      : 'text-left'
+                            "
+                        >
+                            <span class="font-semibold text-white">
+                                {{ getTotal(column.key) | currency: '$' : 'symbol' : '1.0-0' }}
+                            </span>
+                        </div>
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="'money-short'">
+                        <div
+                            [ngClass]="
+                                column.align === 'end'
+                                    ? 'text-right'
+                                    : column.align === 'center'
+                                      ? 'text-center'
+                                      : 'text-left'
+                            "
+                        >
+                            <span class="font-semibold text-white">
+                                {{ getTotal(column.key) | compactCurrency: '$' }}
+                            </span>
+                        </div>
+                    </ng-container>
+
+                    <ng-container *ngSwitchDefault>
+                        <span class="text-gray-500">—</span>
+                    </ng-container>
+                </ng-container>
+            }
+        </td>
+    </ng-container>
+
+    <!-- Render rows -->
+    <tr mat-header-row *matHeaderRowDef="columnsKeys"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsKeys"></tr>
+    <tr mat-footer-row *matFooterRowDef="columnsKeys"></tr>
+</table>
+
+<!-- Paginator is not in design. But i think it should be there :) I would ask PO of course if I could -->
+<mat-paginator
+    class="pagination"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+>
+</mat-paginator>
+
+<mat-menu #menu="matMenu">
+    <ng-template matMenuContent let-item="item">
+        <button mat-menu-item (click)="onEdit(item)">Edit</button>
+        <button mat-menu-item (click)="onDelete(item)">Delete</button>
+    </ng-template>
+</mat-menu>

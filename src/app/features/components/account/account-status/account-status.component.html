@@ -1,0 +1,28 @@
+<h2>Account Status</h2>
+<div class="theme-card flex-1 flex mt-4 justify-between items-center">
+    @for (step of statusSteps; track step; let i = $index) {
+        <div
+            class="flex flex-col items-center text-center"
+            [ngClass]="
+                isComplete(step)
+                    ? 'text-[var(--theme-accent-green)]'
+                    : 'text-[var(--theme-text-color-4)]'
+            "
+        >
+            <div class="w-7 h-7" [innerHTML]="getIcon(isComplete(step))"></div>
+            <h4 class="mt-2 text-white">
+                {{ capitalize(step) }}
+            </h4>
+        </div>
+
+        <div
+            *ngIf="i < statusSteps.length - 1"
+            class="flex-1 border-dashed border-t mb-10"
+            [ngClass]="
+                isComplete(statusSteps[i + 1])
+                    ? 'border-[var(--theme-accent-green)]'
+                    : 'border-[var(--theme-text-color-4)]'
+            "
+        ></div>
+    }
+</div>

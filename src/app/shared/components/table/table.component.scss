@@ -1,0 +1,21 @@
+.theme-table {
+    background: none;
+    td, th {
+        border: none;
+    }
+    td {
+        padding: 0.75rem;
+    }
+    tr {
+        background: none;
+
+        th, &:nth-child(even) {
+            background-color: var(--theme-bg-6);
+            position: relative;
+        }
+    }
+}
+
+.pagination {
+    background:  none;
+}

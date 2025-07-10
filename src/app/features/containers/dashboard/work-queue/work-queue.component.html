@@ -1,0 +1,30 @@
+<div class="w-full h-full theme-card p-4 overflow-x-auto">
+    <h2 class="mb-4">Work Queue</h2>
+
+    <div class="flex gap-2 mb-4">
+        @for (filter of filters(); track filter.label) {
+            <app-filter-button
+                [label]="filter.label"
+                [filterKey]="filter.key"
+                [count]="filter.count"
+                [isActive]="activeFilter() === filter.key"
+                (selectEvent)="selectFilter($event)"
+            />
+        }
+        <button class="cursor-pointer hover:text-[var(--theme-accent)]" (click)="resetFilters()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <app-table [items]="filteredItems()" [columns]="columns"></app-table>
+</div>
+
+<ng-template #originator let-value let-row="row">
+    <div class="flex items-center gap-2">
+        <app-avatar
+            [initials]="getInitials(row.originator.name, row.originator.surname)"
+            [imageUrl]="row.originatorAvatar || ''"
+        ></app-avatar>
+        {{ row.originator.name }} {{ row.originator.surname }}
+    </div>
+</ng-template>

@@ -1,0 +1,79 @@
+@use 'sass:math';
+
+.goal-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.goal-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.bar {
+    display: flex;
+    height: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--theme-text-base-color);
+    position: relative;
+}
+
+.bar-section {
+    height: 100%;
+}
+
+.target-indicator,
+.current-indicator,
+.current-value {
+    position: absolute;
+    top: -2.5rem;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.current-indicator {
+    top: 1.6rem;
+    z-index: 1;
+    .mat-icon {
+        height: 17px;
+    }
+}
+
+.target-indicator {
+    top: -1.5rem;
+    .mat-icon {
+        margin-top: -12px;
+        color: var(--theme-accent);
+    }
+}
+
+.target-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.indicator-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.current-value {
+    top: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--theme-text-color-1);
+    z-index: 1;
+}
+
+.value-label {
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,22 @@
+<div class="flex justify-between items-center mb-4">
+    <h2>Compliance & Documentation</h2>
+    <a class="text-sm hover:underline cursor-pointer" href="/account/history">See history →</a>
+</div>
+<div class="theme-card flex-1">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+        @for (item of complianceAndDocumentation(); track item.title) {
+            <div class="flex items-center">
+                <div
+                    [ngClass]="
+                        item.completed
+                            ? 'text-[var(--theme-accent-green)]'
+                            : 'text-[var(--theme-text-color-2)]'
+                    "
+                    class="w-6 h-6 mr-3"
+                    [innerHTML]="getIcon(item.completed)"
+                ></div>
+                <span class="text-white">{{ item.title }}</span>
+            </div>
+        }
+    </div>
+</div>

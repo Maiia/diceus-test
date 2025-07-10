@@ -1,0 +1,41 @@
+{
+    "progressGoals": [
+        {
+            "type": "progress",
+            "title": "NEW BUSINESS TARGET",
+            "actual": 8100000,
+            "total": 12000000
+        },
+        {
+            "type": "progress",
+            "title": "ANNUAL GWP TARGET",
+            "actual": 28400000,
+            "total": 42000000
+        }
+    ],
+    "targetGoals": [
+        {
+        "type": "sectioned-bar",
+        "title": "Portfolio Loss Ratio Target",
+        "current": 48.2,
+        "target": 55,
+        "sections": [
+            { "from": 0, "to": 50, "label": "good" },
+            { "from": 50, "to": 75, "label": "normal" },
+            { "from": 75, "to": 100, "label": "bad" }
+        ]
+    },
+        {
+            "type": "sectioned-bar",
+            "title": "Renewal Retention",
+            "current": 88,
+            "target": [70, 90],
+            "sections": [
+                { "from": 0, "to": 15, "label": "bad" },
+                { "from": 15, "to": 85, "label": "normal" },
+                { "from": 70, "to": 90, "label": "good" },
+                { "from": 90, "to": 100, "label": "normal" }
+            ]
+        }
+    ]
+}

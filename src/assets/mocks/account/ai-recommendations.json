@@ -1,0 +1,18 @@
+[
+    {
+        "id": "rec-1",
+        "title": "Offer 5% premium discount in exchange for 3-year commitment",
+        "description": "Historical win rate increases 24% with multi-year commitments. Current pricing is 12% above market average. This approach would strengthen retention while maintaining adequate profitability.",
+        "ctaLabel": "Apply",
+        "actionType": "backend",
+        "payload": { "strategyId": "discount_3y" }
+    },
+    {
+        "id": "rec-2",
+        "title": "Propose risk control services for cargo handling procedures",
+        "description": "Can potentially reduce loss ratio by 15–20% based on similar maritime accounts in your portfolio. Specific focus on loading/unloading operations would address the most frequent claim scenarios.",
+        "ctaLabel": "Apply",
+        "actionType": "backend",
+        "payload": { "strategyId": "risk_control_cargo" }
+    }
+]

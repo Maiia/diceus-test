@@ -1,0 +1,38 @@
+[
+    {
+        "id": "msg-1",
+        "title": "Policy Renewal - Auto Insurance 5/15/25",
+        "sender": "Michael Roberts",
+        "date": "Apr 5",
+        "content": "’m reaching out regarding the upcoming auto policy renewal for Real Estate Group, LLC.\nThe current policy expires on 6/30/2024.\nWould you like to review coverage options before proceeding with the renewal?\nI’ve attached the current policy details and premium breakdown for your reference. Please let me know if you have any questions or if you would like to schedule a call to discuss further.",
+        "attachments": 3,
+        "status": "new"
+    },
+    {
+        "id": "msg-2",
+        "title": "New Quote Request - Workers Comp Insurance",
+        "sender": "Sarah Chen",
+        "date": "Apr 5",
+        "content": "Hi Arthur, Real Estate Group has expressed interest in adding workers compensation coverage to their insurance portfolio. I've completed the initial risk assessment based on their current operations and employee count. Please find the attached documents for your review. Let me know if you need any additional information or if you would like to schedule a call to discuss further.",
+        "attachments": 3,
+        "status": "new"
+    },
+    {
+        "id": "msg-3",
+        "title": "Fwd: New Submission - BPM Real Estate - EFF 4/1/24",
+        "sender": "Joshua Dunmire",
+        "date": "Mar 25",
+        "content": "Arthur, attached please find our submission for the above mentioned applicant. We have requested a quote for the following lines of coverage: General Liability, Property, and Auto. Please review and let me know if you need any additional information.",
+        "attachments": 0,
+        "status": "responded"
+    },
+    {
+        "id": "msg-4",
+        "title": "New Business: BPM Real Estate Group, LLC",
+        "sender": "Isabel Keller",
+        "date": "Feb 28",
+        "content": "Hello Arthur, I am pleased to present you with a submission on this client’s upcoming renewal. The current policy expires on 6/30/2024. Please review the attached documents and let me know if you have any questions or need additional information.",
+        "attachments": 5,
+        "status": "none"
+    }
+]

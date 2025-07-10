@@ -1,0 +1,46 @@
+<section class="container theme-container mx-auto">
+    <app-breadcrumbs [items]="breadcrumbs"></app-breadcrumbs>
+    <div class="flex gap-4 flex-wrap md:flex-nowrap">
+        <app-account-summery class="w-full md:w-7/12" [summary]="summary()" />
+        <app-needs-attention
+            class="w-full md:w-5/12"
+            [needsAttention]="needsAttention()"
+            [accountId]="accountId"
+            [accountName]="summary()?.name ?? ''"
+        />
+    </div>
+    <app-performance-metrics
+        class="block mt-8"
+        [data]="performanceMetrics()"
+    ></app-performance-metrics>
+
+    <app-policies-short class="block mt-20" [policies]="policies()"></app-policies-short>
+
+    <div class="flex gap-4 flex-wrap lg:flex-nowrap">
+        <app-account-status
+            class="w-full lg:basis-[58%] mt-11 flex flex-col"
+            [currentStatus]="summary()!.accountStatus"
+        ></app-account-status>
+        <app-compliance-and-documentation
+            class="w-full lg:basis-[40%] mt-11 flex flex-col"
+            [complianceAndDocumentation]="complianceAndDocumentation()"
+        ></app-compliance-and-documentation>
+    </div>
+    @defer (on viewport) {
+        <app-account-details class="block mt-20"></app-account-details>
+    } @placeholder {
+        <p>Loading account details...</p>
+    }
+
+    @defer (on viewport) {
+        <app-communication class="block mt-11"></app-communication>
+    } @placeholder {
+        <p>Loading communication...</p>
+    }
+
+    @defer (on viewport) {
+        <app-policies-table [policies]="policies()"></app-policies-table>
+    } @placeholder {
+        <p>Loading policies table...</p>
+    }
+</section>

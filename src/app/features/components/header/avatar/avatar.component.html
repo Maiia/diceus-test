@@ -1,0 +1,21 @@
+@if (imageUrl && imageUrl !== '') {
+    <div
+        class="rounded-full object-cover relative overflow-hidden"
+        [ngClass]="[
+            size === 'small' ? 'w-8 h-8 text-xs' : 'w-10 h-10 text-lg',
+            'bg-[linear-gradient(to_top_right,rgba(59,130,246,0.3),rgba(59,130,246,1))]',
+        ]"
+    >
+        <img [ngSrc]="imageUrl" class="w-full h-auto object-contain" fill alt="Avatar" />
+    </div>
+} @else {
+    <div
+        class="rounded-full flex items-center justify-center font-bold"
+        [ngClass]="[
+            size === 'small' ? 'w-8 h-8 text-xs' : 'w-10 h-10 text-lg',
+            'bg-[linear-gradient(to_top_right,rgba(59,130,246,0.3),rgba(59,130,246,1))]',
+        ]"
+    >
+        {{ initials }}
+    </div>
+}

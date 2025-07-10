@@ -1,0 +1,28 @@
+<h2 class="text-xl font-semibold">Account Details</h2>
+
+<section class="theme-card mt-8 p-6 grid gap-6 grid-cols-1 lg:grid-cols-[21%_1fr]">
+    <app-tabs-menu
+        class="hidden lg:block"
+        [selectedMainTab]="selectedMainTab!"
+        [selectedSubTab]="selectedSubTab"
+        [tabsGroupsCount]="tabsGroupsCount() || []"
+        (toggleMainTabEvent)="toggleMainTab($event)"
+        (selectSubTabEvent)="selectSubTab($event)"
+    ></app-tabs-menu>
+
+    <section class="flex-1 lg-border-left-dashed">
+        @if (selectedMainTab === MainTabKey.DecisionSupport) {
+            <ng-container [ngSwitch]="selectedSubTab">
+                <div *ngSwitchCase="SubTabKey.Winnability">
+                    <app-winnability-panel
+                        [winnabilityData]="winnability()"
+                        [aiRecommendations]="aiRecommendations()"
+                    ></app-winnability-panel>
+                </div>
+                <div *ngSwitchDefault>Under construction</div>
+            </ng-container>
+        } @else {
+            <div>Under construction</div>
+        }
+    </section>
+</section>
