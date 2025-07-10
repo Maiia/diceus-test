@@ -1,60 +1,98 @@
-# DiceusTest
+# Diceus Test App
 
-test
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+A modern Angular 19 Single Page Application (SPA) demonstrating component architecture, routing, and interactive data visualization. Built for a frontend test assignment.
 
-## Development server
+## 🚀 Live Demo
 
-To start a local development server, run:
+👉 [https://diceus-test.vercel.app](https://diceus-test.vercel.app)
+
+---
+
+## 🛠️ Technologies Used
+
+- **Angular 19** — modern framework with Signals API and standalone components
+- **Angular Signals** — for fine-grained, reactive state management
+- **@angular/material** — Material Design UI components
+- **Tailwind CSS** — utility-first CSS framework for rapid styling
+- **ngx-apexcharts** — advanced interactive charting library for Angular
+- **RxJS** — reactive programming for async streams
+- **TypeScript** — statically typed JavaScript superset
+- **Vercel** — serverless deployment and hosting platform
+
+---
+
+## 🤖 AI Tools Used
+
+- **ChatGPT (GPT-4o)** 
+- **Copilot** 
+
+
+---
+
+### 📁 Project Structure Overview
+
+```text
+.
+### 📁 Project Structure Overview
+
+```text
+.
+├── public/                         
+│   └── mock-logos/                
+│
+├── src/
+│   ├── app/
+│   │   ├── core/                  
+│   │   │   ├── config/           
+│   │   │   ├── guards/
+│   │   │   ├── mappers/
+│   │   │   ├── models/
+│   │   │   ├── services/
+│   │   │   └── strategies/
+│   │   ├── features/              
+│   │   │   ├── components/
+│   │   │   └── containers/
+│   │   ├── shared/                
+│   │   │   ├── components/
+│   │   │   ├── constants/
+│   │   │   ├── helpers/
+│   │   │   ├── models/
+│   │   │   └── pipes/
+│   │   ├── app.component.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.config.ts
+│   │   └── app.routes.ts
+│   ├── assets/                    
+│   │   ├── mocks/
+│   │   ├── account/
+│   │   └── dashboard/
+│   ├── global.scss                
+│   ├── styles.css                 
+│   ├── index.html
+│   └── main.ts
+│
+├── angular.json                   # Angular CLI config
+├── package.json                   # Project dependencies and scripts
+├── package-lock.json              # NPM lockfile
+├── tailwind.config.ts             # TailwindCSS configuration
+├── .postcssrc.json                # PostCSS plugins for Tailwind
+├── .prettierrc                    # Code formatting rules
+├── .editorconfig                  # Editor formatting preferences
+├── .gitignore                     # Git exclusion rules
+├── vercel.json                    # SPA fallback routing config for Vercel
+├── setup-jest.ts                  # Jest setup file for Angular testing
+├── tsconfig.app.json              # TS config for main app
+├── tsconfig.spec.json             # TS config for unit tests
+├── tsconfig.json                  # Root TypeScript config
+└── README.md                      # Project description and setup
+---
+
+## 📦 Build & Deploy Instructions
+
+### 🔧 Local Development
 
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+npm install
+npm start       # or: ng serve
+npm run build   # or: ng build --configuration production
