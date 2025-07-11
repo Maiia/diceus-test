@@ -15,7 +15,7 @@ import { ICON_COLOR_MAP } from '@core/services/icon/icon-color.utils';
 export class PoliciesShortComponent {
     private readonly sanitizer = inject(DomSanitizer);
     private readonly iconService = inject(IconService);
-    public policies = input<IPolicy[] | null>([]);
+    public policies = input<IPolicy[]>([]);
 
     public getIcon(name: string): SafeHtml {
         const raw = this.iconService.getIcon(name);

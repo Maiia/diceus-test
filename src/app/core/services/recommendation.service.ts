@@ -6,7 +6,7 @@ import * as recommendation from '../../../assets/mocks/account/ai-recommendation
     providedIn: 'root',
 })
 export class RecommendationService {
-    private readonly aiRecommendationsSignal = signal<IAIRecommendation[] | null>(null);
+    private readonly aiRecommendationsSignal = signal<IAIRecommendation[]>([]);
     readonly aiRecommendations = computed(() => this.aiRecommendationsSignal());
 
     getAIRecommendations(): void {

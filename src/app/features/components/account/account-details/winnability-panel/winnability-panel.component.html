@@ -32,7 +32,7 @@
         <div class="theme-card-inner w-full flex flex-col justify-between pb-0 h-full">
             <app-statistics-group
                 [title]="'Position'"
-                [items]="winnabilityData()?.position || []"
+                [items]="winnabilityData()?.position"
             ></app-statistics-group>
         </div>
     </div>
@@ -59,6 +59,6 @@
 </div>
 
 <app-ai-recommendations
-    [aiRecommendations]="aiRecommendations() || []"
+    [aiRecommendations]="aiRecommendations()"
     class="theme-card-inner w-full mt-6"
 ></app-ai-recommendations>

@@ -37,6 +37,6 @@ export class TabsMenuComponent {
     }
 
     public getSubTabs(key: string) {
-        return this.mainTabGroups.find(g => g.key === key)?.subTabs || [];
+        return this.mainTabGroups.find(g => g.key === key)?.subTabs;
     }
 }

@@ -12,7 +12,7 @@ import { MatIcon } from '@angular/material/icon';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NeedsAttentionComponent implements OnInit {
-    public needsAttention = input<IAccountNeedsAttention[] | null>();
+    public needsAttention = input<IAccountNeedsAttention[]>();
     @Input() accountId!: string;
     @Input() accountName!: string;
 

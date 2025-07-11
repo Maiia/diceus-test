@@ -6,7 +6,7 @@ import * as communication from '../../../assets/mocks/account/communication.json
     providedIn: 'root',
 })
 export class CommunicationService {
-    private readonly messagesSignal = signal<IMessage[] | null>(null);
+    private readonly messagesSignal = signal<IMessage[]>([]);
     readonly messages = computed(() => this.messagesSignal());
 
     getMessages(): void {

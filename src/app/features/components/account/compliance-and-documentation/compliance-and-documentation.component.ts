@@ -14,7 +14,7 @@ import { NgClass } from '@angular/common';
 export class ComplianceAndDocumentationComponent {
     private readonly iconService = inject(IconService);
     private readonly sanitizer = inject(DomSanitizer);
-    public complianceAndDocumentation = input<IComplianceAndDocumentation[] | null>(null);
+    public complianceAndDocumentation = input<IComplianceAndDocumentation[]>([]);
 
     public getIcon(completed: boolean): SafeHtml {
         const icon = completed ? 'checked' : 'notChecked';

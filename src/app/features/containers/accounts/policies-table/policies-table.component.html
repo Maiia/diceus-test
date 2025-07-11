@@ -2,7 +2,7 @@
 
 <section class="theme-card w-full overflow-x-auto">
     <app-search-bar></app-search-bar>
-    <app-table class="block mt-3.5" [columns]="columns" [items]="policies() || []" />
+    <app-table class="block mt-3.5" [columns]="columns" [items]="policies()" />
 
     <ng-template #lineTemplate let-value let-row="row">
         <div class="flex">

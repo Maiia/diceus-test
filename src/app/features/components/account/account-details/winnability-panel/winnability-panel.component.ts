@@ -22,5 +22,5 @@ import { AiRecommendationsComponent } from '@features/components/account/account
 })
 export class WinnabilityPanelComponent {
     public winnabilityData = input<IWinnabilityData | null>(null);
-    public aiRecommendations = input<IAIRecommendation[] | null>(null);
+    public aiRecommendations = input<IAIRecommendation[]>([]);
 }

@@ -43,6 +43,7 @@ import {
 import { formatDate as angularFormatDate } from '@angular/common';
 import { TableColumnConfig } from '@shared/models/table-column-config.model';
 import { CompactCurrencyPipe } from '@shared/pipes/compact-currency.pipe';
+import { IPolicy } from '@core/models/account.model';
 
 @Component({
     selector: 'app-table',
@@ -85,7 +86,7 @@ import { CompactCurrencyPipe } from '@shared/pipes/compact-currency.pipe';
 })
 export class TableComponent implements OnChanges, AfterViewInit {
     @Input() columns: TableColumnConfig[] = [];
-    @Input() items: any[] = [];
+    @Input() items: IPolicy[] = [];
 
     public dataSource = new MatTableDataSource<any>();
     @ViewChild(MatPaginator) paginator!: MatPaginator;

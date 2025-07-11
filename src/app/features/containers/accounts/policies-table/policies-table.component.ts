@@ -26,7 +26,7 @@ import { SearchBarComponent } from '@shared/components/search-bar/search-bar.com
 export class PoliciesTableComponent implements AfterViewInit {
     private readonly sanitizer = inject(DomSanitizer);
     private readonly iconService = inject(IconService);
-    public policies = input<IPolicy[] | null>([]);
+    public policies = input<IPolicy[]>([]);
 
     public columns: TableColumnConfig[] = [];
     @ViewChild('lineTemplate', { static: true }) lineTemplate!: TemplateRef<any>;

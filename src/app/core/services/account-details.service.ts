@@ -24,24 +24,22 @@ export class AccountDetailsService {
     private readonly summerySignal = signal<IAccountSummary | null>(null);
     readonly summery = computed(() => this.summerySignal());
 
-    private readonly needsAttentionSignal = signal<IAccountNeedsAttention[] | null>(null);
+    private readonly needsAttentionSignal = signal<IAccountNeedsAttention[]>([]);
     readonly needsAttention = computed(() => this.needsAttentionSignal());
 
     private readonly performanceMetricsSignal = signal<IPerformanceMetrics | null>(null);
     readonly performanceMetrics = computed(() => this.performanceMetricsSignal());
 
-    private readonly policiesSignal = signal<IPolicy[] | null>(null);
+    private readonly policiesSignal = signal<IPolicy[]>([]);
     readonly policies = computed(() => this.policiesSignal());
 
-    private readonly complianceAndDocumentationSignal = signal<
-        IComplianceAndDocumentation[] | null
-    >(null);
+    private readonly complianceAndDocumentationSignal = signal<IComplianceAndDocumentation[]>([]);
     readonly complianceAndDocumentation = computed(() => this.complianceAndDocumentationSignal());
 
     private readonly winnabilitySignal = signal<IWinnabilityData | null>(null);
     readonly winnability = computed(() => this.winnabilitySignal());
 
-    private readonly tabsGroupsCountSignal = signal<IAccountGroupsCount[] | null>(null);
+    private readonly tabsGroupsCountSignal = signal<IAccountGroupsCount[]>([]);
     readonly tabsGroupsCount = computed(() => this.tabsGroupsCountSignal());
 
     constructor() {}
