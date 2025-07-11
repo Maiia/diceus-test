@@ -107,13 +107,13 @@
     */
 
     .theme-button {
-        @apply bg-[var(--theme-bg-1)] text-[var(--theme-text-color-2)] rounded-full px-4 py-2;
+        @apply bg-[var(--theme-bg-1)] text-[var(--theme-text-color-2)] rounded-full px-4 py-2 transition-colors duration-300;
         &:hover {
             @apply bg-[var(--theme-accent)] text-white;
         }
     }
     .outlined-button {
-        @apply border-1 border-solid border-[var(--theme-accent)] text-[var(--theme-accent)] rounded-full px-4 py-2;
+        @apply min-w-24 border-1 border-solid border-[var(--theme-accent)] text-[var(--theme-accent)] rounded-full px-3 py-1.5 cursor-pointer;
         &:hover {
             @apply bg-[var(--theme-accent)] text-white;
         }
@@ -125,7 +125,7 @@
         @apply min-w-30 min-h-10 lg:min-w-36 lg:min-h-14 bg-[var(--theme-accent-green)] text-[var(--theme-bg-5)] px-4  rounded-full cursor-pointer hover:bg-[var(--theme-bg-4)] transition-colors duration-300;
     }
     .button-active {
-        @apply bg-[var(--theme-accent)] text-white  rounded-full transition-colors duration-300;
+        @apply bg-[var(--theme-accent)] text-white;
     }
 
 
