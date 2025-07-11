@@ -7,6 +7,7 @@
     <ng-template #lineTemplate let-value let-row="row">
         <div class="flex">
             <div
+                aria-hidden="true"
                 [style.backgroundColor]="getIconClass(row.icon)"
                 class="w-6 h-6 p-1 mr-1 text-white rounded-full"
                 [innerHTML]="getIcon(row.icon)"

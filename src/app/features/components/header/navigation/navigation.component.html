@@ -1,4 +1,4 @@
-<nav class="relative container theme-container mx-auto pr-30 mt-5">
+<nav aria-label="Main navigation" class="relative container theme-container mx-auto pr-30 mt-5">
     <ul
         #scrollContainer
         cdkScrollable
@@ -16,6 +16,7 @@
                     routerLinkActive="bg-[var(--theme-bg-4)] text-white"
                 >
                     <span
+                        aria-hidden="true"
                         routerLinkActive="text-white"
                         class="mr-2 w-4.5 h-4.5 text-[var(--theme-accent)] group-hover:text-white"
                         [innerHTML]="getIcon(navItem.icon!)"

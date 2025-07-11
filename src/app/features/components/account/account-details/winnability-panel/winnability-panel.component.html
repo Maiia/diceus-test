@@ -14,8 +14,13 @@
     </div>
 
     <div class="col-span-1">
-        <div class="theme-card-inner w-full flex flex-col justify-between pb-0 h-full">
-            <h4>Historical trend</h4>
+        <div
+            role="region"
+            aria-labelledby="historical-trend-heading"
+            tabindex="0"
+            class="theme-card-inner w-full flex flex-col justify-between pb-0 h-full"
+        >
+            <h4 id="historical-trend-heading">Historical trend</h4>
             <app-line-chart
                 [data]="winnabilityData()?.historicalTrend || []"
                 [labels]="['Jan', 'Feb', 'Mar', 'Apr', 'Now']"

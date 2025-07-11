@@ -1,9 +1,10 @@
 <h2>Policies</h2>
-<div class="mt-5 w-full theme-card grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<div role="list" class="mt-5 w-full theme-card grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
     @for (policy of policies(); track policy) {
-        <div class="theme-card-inner w-full py-5 px-8 flex flex-col gap-2">
+        <div role="listitem" class="theme-card-inner w-full py-5 px-8 flex flex-col gap-2">
             <div class="flex gap-4 items-center">
                 <div
+                    aria-hidden="true"
                     [ngClass]="getIconClass(policy.icon)"
                     class="w-6 h-6"
                     [innerHTML]="getIcon(policy.icon)"

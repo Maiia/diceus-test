@@ -1,5 +1,6 @@
-<div class="flex items-center gap-2 mb-4 text-lg font-semibold">
+<section class="flex items-center gap-2 mb-4 text-lg font-semibold">
     <span
+        aria-hidden="true"
         [ngClass]="`text-[${primaryColor}] border-[${primaryColor}]`"
         class="w-6 h-6 rounded-full border-2 flex items-center align-center justify-center"
     >
@@ -7,11 +8,15 @@
             direction === 'up' ? 'arrow_upward' : 'arrow_downward'
         }}</mat-icon>
     </span>
-    {{ title }}
-</div>
+    <h4 id="factor-list-block-heading">{{ title }}</h4>
+</section>
 
 @for (item of items(); track item; let i = $index) {
-    <div class="mb-2">
+    <section
+        class="mb-2"
+        role="listitem"
+        [attr.aria-label]="'Item ' + (i + 1) + ': ' + item.label + ', ' + item.value + '%'"
+    >
         <div class="flex items-center gap-2 text-sm mb-1">
             <span
                 class="rounded-full w-11 h-11 flex items-center justify-center text-md border-1"
@@ -31,6 +36,7 @@
                     ></div>
                 </div>
                 <div
+                    [attr.aria-hidden]="true"
                     class="absolute bottom-0 pl-3.5 text-[var(--theme-text-color-4)]"
                     [ngStyle]="{ left: getWidth(item.value) + '%' }"
                 >
@@ -38,5 +44,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 }

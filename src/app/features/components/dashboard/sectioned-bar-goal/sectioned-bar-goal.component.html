@@ -22,9 +22,10 @@
             <span class="value-label">{{ goal.current }}%</span>
         </div>
 
-        <div class="bar">
+        <div role="list" class="bar">
             @for (section of goal.sections; track section) {
                 <div
+                    role="listitem"
                     class="bar-section"
                     [ngStyle]="{
                         width: getBarWidth(section),

@@ -1,7 +1,9 @@
-<h2>Account Status</h2>
+<h2 id="account-status-heading">Account Status</h2>
 <div class="theme-card flex-1 flex mt-4 justify-between items-center">
     @for (step of statusSteps; track step; let i = $index) {
         <div
+            role="listitem"
+            [attr.aria-label]="step + (isComplete(step) ? ' — completed' : ' — not completed')"
             class="flex flex-col items-center text-center"
             [ngClass]="
                 isComplete(step)
@@ -9,20 +11,20 @@
                     : 'text-[var(--theme-text-color-4)]'
             "
         >
-            <div class="w-7 h-7" [innerHTML]="getIcon(isComplete(step))"></div>
+            <div class="w-7 h-7" aria-hidden="true" [innerHTML]="getIcon(isComplete(step))"></div>
             <h4 class="mt-2 text-white">
                 {{ capitalize(step) }}
             </h4>
         </div>
-
-        <div
-            *ngIf="i < statusSteps.length - 1"
-            class="flex-1 border-dashed border-t mb-10"
-            [ngClass]="
-                isComplete(statusSteps[i + 1])
-                    ? 'border-[var(--theme-accent-green)]'
-                    : 'border-[var(--theme-text-color-4)]'
-            "
-        ></div>
+        @if (i < statusSteps.length - 1) {
+            <div
+                class="flex-1 border-dashed border-t mb-10"
+                [ngClass]="
+                    isComplete(statusSteps[i + 1])
+                        ? 'border-[var(--theme-accent-green)]'
+                        : 'border-[var(--theme-text-color-4)]'
+                "
+            ></div>
+        }
     }
 </div>

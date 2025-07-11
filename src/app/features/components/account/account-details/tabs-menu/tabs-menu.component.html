@@ -1,11 +1,13 @@
 <aside class="hidden lg:block px-4 py-5">
     @for (group of mainTabGroups; track group.key) {
         <nav
+            aria-label="Account Details Navigation"
             role="tablist"
             class="w-full pt-3 mt-2 xl:pt-5 xl:px-4"
             [ngClass]="{ 'theme-card-inner': selectedMainTab === group.key }"
         >
             <button
+                id="{{ group.key + '-tab' }}"
                 role="tab"
                 [attr.aria-selected]="selectedMainTab === group.key"
                 [attr.aria-controls]="group.key + '-panel'"
@@ -31,9 +33,15 @@
             </button>
 
             @if (selectedMainTab === group.key && group.subTabs.length > 0) {
-                <div class="xl:ml-4" role="tabpanel" [id]="group.key + '-panel'">
+                <div
+                    class="xl:ml-4"
+                    role="tabpanel"
+                    [id]="group.key + '-panel'"
+                    [attr.aria-labelledby]="group.key + '-tab'"
+                >
                     @for (tab of group.subTabs; track tab.key) {
                         <div
+                            [attr.tabindex]="selectedMainTab === group.key ? '0' : '-1'"
                             class="mt-4 text-sm cursor-pointer"
                             [ngClass]="{
                                 'text-[var(--theme-text-color-3)] font-semibold':
