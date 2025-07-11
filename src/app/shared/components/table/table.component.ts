@@ -86,7 +86,7 @@ import { IPolicy } from '@core/models/account.model';
 })
 export class TableComponent implements OnChanges, AfterViewInit {
     @Input() columns: TableColumnConfig[] = [];
-    @Input() items: IPolicy[] = [];
+    @Input() items: any[] = [];
 
     public dataSource = new MatTableDataSource<any>();
     @ViewChild(MatPaginator) paginator!: MatPaginator;
