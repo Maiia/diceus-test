@@ -61,6 +61,7 @@
 </aside>
 <div class="block lg:hidden mb-4">
     <select
+        aria-label="Select main tab"
         class="w-full px-3 py-2 rounded-md bg-[var(--theme-bg-2)] text-white"
         [(ngModel)]="selectedMainTab"
     >
@@ -74,6 +75,7 @@
     @if (selectedMainTab && getSubTabs(selectedMainTab)!.length > 0) {
         <div class="mt-2">
             <select
+                aria-label="Select sub tab"
                 class="w-full px-3 py-2 rounded-md bg-[var(--theme-bg-3)] text-white"
                 [(ngModel)]="selectedSubTab"
             >

@@ -14,6 +14,7 @@
                     {{ event.subtitle }}
                 </div>
                 <a
+                    aria-label="Event: {{ event.title }} – {{ event.linkText }}"
                     class="text-blue-400 text-sm inline-flex items-center gap-1 hover:underline"
                     [routerLink]="event.linkUrl"
                 >

@@ -1,7 +1,7 @@
 <h2>Performance Metrics</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
     <app-metric-card class="mt-6" [linkText]="'See all factors'" [linkUrl]="'/winnability/factors'">
-        <div>
+        <div role="group" aria-label="Winnability">
             <div class="flex align-center gap-2">
                 <h3>Winnability</h3>
                 <app-winnability-dots [level]="data()!.winnability.level"></app-winnability-dots>
@@ -11,7 +11,7 @@
     </app-metric-card>
 
     <app-metric-card class="mt-6" [linkText]="'View history'" [linkUrl]="'/loss-ratio/history'">
-        <div>
+        <div role="group" aria-label="Loss Ratio">
             <h3>Loss Ratio</h3>
             <div>
                 <span class="text-big">{{ data()!.lossRatio.current }}% </span>
@@ -21,7 +21,7 @@
     </app-metric-card>
 
     <app-metric-card class="mt-6" [linkText]="'View trend'" [linkUrl]="'/premium-growth/trend'">
-        <div>
+        <div role="group" aria-label="Premium Growth">
             <h3>Premium Growth</h3>
             <div>
                 <span class="text-big">{{ data()!.premiumGrowth!.yoyIncrease }}% </span>
