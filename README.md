@@ -4,7 +4,7 @@ A modern Angular 19 Single Page Application (SPA) demonstrating component archit
 
 ## 🚀 Live Demo
 
-👉 [https://diceus-test.vercel.app](https://diceus-test.vercel.app)
+👉 [https://insurance-angular-test.vercel.app](https://insurance-angular-test.vercel.app)
 
 ---
 
@@ -96,3 +96,15 @@ A modern Angular 19 Single Page Application (SPA) demonstrating component archit
 npm install
 npm start       # or: ng serve
 npm run build   # or: ng build --configuration production
+
+```
+## 💡 Notes & Potential Improvements
+
+If I had more time, I would:
+
+- Replace repeated string literals with enums and constants for better maintainability
+- Add more unit tests and integration tests with Jest
+- Add `id` fields to mock data for more efficient `@for track` usage
+- Improve ARIA accessibility attributes via ARIA labels and roles
+
+The current version prioritizes delivery and clear architecture over full polish.
